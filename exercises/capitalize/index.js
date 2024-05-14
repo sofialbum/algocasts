@@ -11,7 +11,6 @@ function capitalize(str) {
   const arr = str.split(' ');
   const capitalizeLetter = arr.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
   return capitalizeLetter.join(' ');
-
 }
 
 module.exports = capitalize;
