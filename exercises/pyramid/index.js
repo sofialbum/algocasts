@@ -36,6 +36,9 @@
 //   }
 // }
 
+// RECURSIVE SOLUTION
+
+
 function pyramid(n, row = 0, level = '', column = 0) {
   const totalLength = 2 * n - 1;
   const middle = Math.floor(totalLength / 2);
