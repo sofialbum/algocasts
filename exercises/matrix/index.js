@@ -17,8 +17,8 @@
 
 function matrix(n) {
   let results = [];
-  for(let i = 0; i < n; i++){
-    results.push([])
+  for (let i = 0; i < n; i++) {
+    results.push([]);
   }
 
   let counter = 1;
@@ -28,37 +28,31 @@ function matrix(n) {
   let endColumn = n - 1;
 
   while (startColumn <= endColumn && startRow <= endRow) {
-    for (let i = startColumn; i <= endColumn; i++){
+    for (let i = startColumn; i <= endColumn; i++) {
       results[startRow][i] = counter;
-      counter += 1
+      counter += 1;
     }
     startRow += 1;
 
-    for (let i = startRow; i <= endRow; i++){
+    for (let i = startRow; i <= endRow; i++) {
       results[i][endColumn] = counter;
-      counter += 1
+      counter += 1;
     }
     endColumn -= 1;
 
-    if (startRow < endRow) {
-      for (let i = endColumn; i >= startColumn; i--){
-        results[endRow][i] = counter;
-        counter += 1
-      }
-      endRow -= 1;
+    for (let i = endColumn; i >= startColumn; i--) {
+      results[endRow][i] = counter;
+      counter += 1;
     }
+    endRow -= 1;
 
-    if (startColumn < endColumn) {
-      for (let i = endRow; i >= startRow; i--){
-        results[i][startColumn] = counter;
-        counter += 1
-      }
-      startColumn += 1;
-      
+    for (let i = endRow; i >= startRow; i--) {
+      results[i][startColumn] = counter;
+      counter += 1;
     }
+    startColumn += 1;
   }
-  return results
+  return results;
 }
-
 
 module.exports = matrix;
