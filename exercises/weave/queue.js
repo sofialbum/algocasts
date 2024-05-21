@@ -18,8 +18,8 @@ class Queue {
   }
 
   peek() {
-    const first = this.data[this.data.length-1];
-    return first;
+    return this.data[this.data.length-1];
+    
   }
 }
 
