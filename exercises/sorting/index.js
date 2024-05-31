@@ -38,6 +38,14 @@ function selectionSort(arr) {
 }
 
 function mergeSort(arr) {
+  if (arr.length === 1) {
+    return arr;
+  }
+  
+  const left = arr.splice(0, Math.floor(arr.length / 2))
+  const right = arr;
+  
+  return merge(mergeSort(left), mergeSort(right))
 
 }
 
